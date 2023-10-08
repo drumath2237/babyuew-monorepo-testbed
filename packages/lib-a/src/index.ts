@@ -1,1 +1,1 @@
-export const message = "Hello, Yeah";
+export const message = "Hello~~~";

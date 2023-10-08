@@ -2,6 +2,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import { message } from "lib-a"
 
+console.log(message);
 </script>
 
 <template>
