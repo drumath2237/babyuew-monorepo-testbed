@@ -9,8 +9,7 @@ export default defineConfig({
   },
   build: {
     commonjsOptions: {
-      exclude: ["lib-a"],
-      include: [],
+      include: [/lib-a/, /node_modules/],
     },
   },
 });
