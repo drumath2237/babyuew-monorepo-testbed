@@ -27,7 +27,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -36,28 +36,28 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           version: 8
-        
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
-          cache: 'pnpm'
-          
+          cache: "pnpm"
+
       - name: Install dependencies
         run: pnpm install
 
       - name: Build
         run: pnpm run build
-        
+
       - name: Setup Pages
         uses: actions/configure-pages@v3
-        
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
           # Upload entire repository
-          path: './playground/dist'
-          
+          path: "./playground/dist"
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
