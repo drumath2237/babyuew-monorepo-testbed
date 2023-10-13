@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
 import { message } from "lib-a"
+import { MyTextLabel } from "ui-components"
 
 console.log(message);
 </script>
@@ -14,7 +14,7 @@ console.log(message);
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld :msg="message" />
+  <MyTextLabel :msg="message" />
 </template>
 
 <style scoped>

@@ -9,14 +9,16 @@ export default defineConfig({
   plugins: [
     vue(),
     dts({
-      exclude: ["./src/main.ts"],
+      include: ["./src/**/**.ts", "./src/**/**.vue"],
+      exclude: ["./src/main.ts", "./public/*"],
     }),
   ],
   build: {
     lib: {
-      entry: resolve(__dirname, "src/lib.ts"),
-      name: "index",
-      fileName: (format) => `index.${format}.js`,
+      entry: resolve(__dirname, "src/index.ts"),
+      name: "ui-components",
+      fileName: "index",
+      formats: ["umd", "es"],
     },
     rollupOptions: {
       external: ["vue"],
